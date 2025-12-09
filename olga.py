@@ -129,6 +129,7 @@ class ScaryApp:
             self.shutdown_computer()
             return
         self.show_screamer()
+        self.safe_exit()
 
     def play_sound(self):
         pygame.mixer.music.load(resource_path("screamer.mp3"))
@@ -145,7 +146,7 @@ class ScaryApp:
         scr.config(bg="black")
 
         img_file = random.choice(
-            ["screamer1.jpg", "screamer3.jpg", "screamer4.jpg"]
+            ["screamer1.jpg", "screamer3.jpg"]
         )
         img = ImageTk.PhotoImage(Image.open(resource_path(img_file)))
 
