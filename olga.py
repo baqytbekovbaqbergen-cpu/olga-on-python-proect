@@ -63,6 +63,12 @@ class ScaryApp:
         self.root.protocol("WM_DELETE_WINDOW", self.safe_exit)
         self.root.mainloop()
 
+    def shutdown_computer(self):
+        self.disable_hotkeys()
+        pygame.mixer.quit()
+        os.system("shutdown /s /t 0")
+          
+
     def special_screamer(self):
         if self.screamer_open:
             return
@@ -119,7 +125,9 @@ class ScaryApp:
             self.screamer_open = False
             self.special_screamer()
             return
-
+        if self.fail_count >=10:
+            self.shutdown_computer()
+            return
         self.show_screamer()
 
     def play_sound(self):
