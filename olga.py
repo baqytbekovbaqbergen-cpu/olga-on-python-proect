@@ -145,7 +145,7 @@ class ScaryApp:
         scr.config(bg="black")
 
         img_file = random.choice(
-            ["screamer1.jpg", "screamer3.jpg", "screamer4.jpg"]
+            ["screamer1.jpg", "screamer3.jpg",]
         )
         img = ImageTk.PhotoImage(Image.open(resource_path(img_file)))
 
